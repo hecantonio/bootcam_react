@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
   return (
@@ -17,9 +18,18 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+        <Contador />
+      </header>      
     </div>
   );
+}
+
+const Contador = () => {
+  const [cont, setCont] = useState(0);
+
+  return (
+    <button onClick={() => setCont(prev => prev + 1)}>{cont}</button>
+  )
 }
 
 export default App;
